@@ -29,6 +29,36 @@ Priorizamos el valor de negocio para asegurar que el sistema sea funcional desde
 
 ---
 
+ Definición de Entidades (Data Schema)
+
+### 🏋️ Entidad: Zona (Library Resource)
+| Atributo | Tipo | Descripción |
+| :--- | :--- | :--- |
+| `Id` | `int` | Llave primaria (Identity). |
+| `Nombre` | `string` | Nombre de la zona (ej. Área Pesas). |
+| `AforoMaximo` | `int` | Capacidad permitida. |
+| `Estado` | `string` | Disponible, Mantenimiento, Limpieza. |
+
+### 👤 Entidad: Coach (Author)
+| Atributo | Tipo | Descripción |
+| :--- | :--- | :--- |
+| `Id` | `int` | Llave primaria. |
+| `NombreCompleto` | `string` | Nombre y Apellido. |
+| `Especialidad` | `string` | Área de experto (Yoga, HIIT, etc). |
+| `Certificacion` | `string` | Nivel: Senior, Junior, Master. |
+
+### 📅 Entidad: Reserva (Loan)
+| Atributo | Tipo | Descripción |
+| :--- | :--- | :--- |
+| `Id` | `int` | Llave primaria. |
+| `Fecha` | `DateTime` | Día de la sesión. |
+| `HoraInicio` | `TimeSpan` | Hora programada. |
+| `SocioNombre` | `string` | Nombre del cliente. |
+| `ZonaId` | `int` | FK -> Relación con la Zona. |
+| `CoachId` | `int` | FK -> Relación con el Coach. |
+
+---
+
 ## 🏗️ Arquitectura del Sistema
 Aplicaremos el patrón **MVC (Model-View-Controller)** para garantizar la escalabilidad:
 - **Models:** Entidades con Entity Framework Core.
