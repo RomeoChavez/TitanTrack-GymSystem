@@ -59,6 +59,19 @@ Priorizamos el valor de negocio para asegurar que el sistema sea funcional desde
 
 ---
 
+## 🏗️ Sprint 1: Refinamiento y Modelado
+En esta fase, transformamos los requerimientos en planos técnicos utilizando **PlantUML**.
+
+### 🎨 Diagrama de Casos de Uso
+Representación de las interacciones entre Administradores, Coaches y Socios.
+![Casos de Uso](./Docs/CasosDeUso/TitanTrack_UseCases.png)
+
+### 🏗️ Diagrama de Clases
+Arquitectura de datos para la implementación en SQL Server con Entity Framework.
+![Diagrama de Clases](./Docs/Clases/TitanTrack_Classes.png)
+
+---
+
 ## 🏗️ Arquitectura del Sistema
 Aplicaremos el patrón **MVC (Model-View-Controller)** para garantizar la escalabilidad:
 - **Models:** Entidades con Entity Framework Core.
