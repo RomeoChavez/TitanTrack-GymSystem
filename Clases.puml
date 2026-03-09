@@ -1,0 +1,33 @@
+@startuml TitanTrack_Classes
+skinparam classAttributeIconSize 0
+
+class Zona {
+    - int id
+    - string nombre
+    - int aforoMaximo
+    - string estado
+    + bool estaDisponible()
+}
+
+class Coach {
+    - int id
+    - string nombreCompleto
+    - string especialidad
+    - string certificacion
+}
+
+class Reserva {
+    - int id
+    - DateTime fecha
+    - TimeSpan horaInicio
+    - string socioNombre
+    - int zonaId
+    - int coachId
+}
+
+' Relaciones
+Coach "1" -- "0..*" Zona : supervisa >
+Zona "1" -- "0..*" Reserva : contiene >
+Coach "1" -- "0..*" Reserva : asignado a >
+
+@enduml

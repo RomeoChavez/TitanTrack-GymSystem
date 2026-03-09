@@ -1,0 +1,21 @@
+@startuml TitanTrack_UseCases
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Administrador" as Admin
+actor "Coach" as Coach
+actor "Socio" as Socio
+
+rectangle "TitanTrack System" {
+  Admin -- (Gestionar Zonas)
+  Admin -- (Gestionar Coaches)
+  Admin -- (Configurar Aforos)
+  
+  Coach -- (Ver Reservas de Zona)
+  Coach -- (Actualizar Estado de Máquinas)
+  
+  Socio -- (Consultar Disponibilidad)
+  (Realizar Reserva) .> (Consultar Disponibilidad) : <<include>>
+  Socio -- (Realizar Reserva)
+}
+@enduml
